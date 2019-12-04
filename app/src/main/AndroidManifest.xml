@@ -17,14 +17,8 @@
 
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.android.treasureHunt">
-    <!--
-        The FINE_LOCATION permission is required for geofencing functionality to work.
-    -->
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <!--
-        The BACKGROUND_LOCATION permission is required for geofencing functionality to work on Q+
-    -->
-    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
+
+<!--    TODO: Step 1 add in permissions for fine location and background-->
 
     <application
         android:allowBackup="true"
