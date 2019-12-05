@@ -1,4 +1,4 @@
-Geofencing - Final code
+Geofencing - Starter code
 ========================
 
 Solution code for Advanced Android with Kotlin Codelab
