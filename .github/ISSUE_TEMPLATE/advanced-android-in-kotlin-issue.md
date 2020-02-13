@@ -1,7 +1,7 @@
 ---
 name: Advanced Android in Kotlin issue
 about: Report problems with Advanced Android in Kotlin codelab.
-title: " Advanced Android in Kotlin:Geofences 4.2 [Step #][description]"
+title: " Advanced Android in Kotlin: Geofences 4.2 [Step #][description]"
 labels: ''
 assignees: ''
 
