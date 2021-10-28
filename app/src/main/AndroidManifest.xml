@@ -20,6 +20,7 @@
     <!--
         The FINE_LOCATION permission is required for geofencing functionality to work.
     -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <!--
         The BACKGROUND_LOCATION permission is required for geofencing functionality to work on Q+
@@ -36,7 +37,8 @@
 
         <activity android:name=".HuntMainActivity"
             android:label="@string/title_activity_hunt"
-            android:launchMode="singleInstance">
+            android:launchMode="singleInstance"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
