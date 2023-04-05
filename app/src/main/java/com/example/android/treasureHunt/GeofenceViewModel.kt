@@ -16,10 +16,7 @@
 
 package com.example.android.treasureHunt
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.SavedStateHandle
-import androidx.lifecycle.Transformations
-import androidx.lifecycle.ViewModel
+import androidx.lifecycle.*
 
 /*
  * This class contains the state of the game.  The two important pieces of state are the index
@@ -32,14 +29,18 @@ import androidx.lifecycle.ViewModel
  * the Home action will cause the state to be saved, even if the game is terminated by Android in
  * the background.
  */
+/**
+ * Transformations are deprecated now.
+ * https://stackoverflow.com/a/75465436
+ */
 class GeofenceViewModel(state: SavedStateHandle) : ViewModel() {
     private val _geofenceIndex = state.getLiveData(GEOFENCE_INDEX_KEY, -1)
     private val _hintIndex = state.getLiveData(HINT_INDEX_KEY, 0)
     val geofenceIndex: LiveData<Int>
         get() = _geofenceIndex
 
-    val geofenceHintResourceId = Transformations.map(geofenceIndex) {
-        val index = geofenceIndex?.value ?: -1
+    val geofenceHintResourceId = geofenceIndex.map {
+        val index = geofenceIndex.value ?: -1
         when {
             index < 0 -> R.string.not_started_hint
             index < GeofencingConstants.NUM_LANDMARKS -> GeofencingConstants.LANDMARK_DATA[geofenceIndex.value!!].hint
@@ -47,7 +48,7 @@ class GeofenceViewModel(state: SavedStateHandle) : ViewModel() {
         }
     }
 
-    val geofenceImageResourceId = Transformations.map(geofenceIndex) {
+    val geofenceImageResourceId = geofenceIndex.map {
         val index = geofenceIndex.value ?: -1
         when {
             index < GeofencingConstants.NUM_LANDMARKS -> R.drawable.android_map

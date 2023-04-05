@@ -14,25 +14,24 @@
   ~ limitations under the License.
   -->
 
-<layout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+        <import type="android.content.Context" />
         <variable
             name="viewmodel"
             type="com.example.android.treasureHunt.GeofenceViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-
         android:id="@+id/activity_maps_main"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:keepScreenOn="true"
         android:layout_marginTop="@dimen/vertical_margin"
         android:layout_marginBottom="@dimen/vertical_margin"
+        android:keepScreenOn="true"
         tools:context="com.example.android.treasureHunt.MapsMainActivity">
 
         <TextView
@@ -47,11 +46,11 @@
             android:textAlignment="center"
             android:textSize="@dimen/hint_text_size"
             android:textStyle="bold"
-            tools:text="Go to some landmark in the city. You can use the emulator or a MockLocationProvider."
             app:layout_constraintBottom_toTopOf="@+id/imageView"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Go to some landmark in the city. You can use the emulator or a MockLocationProvider." />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline"
@@ -70,7 +69,6 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@id/guideline"
-            tools:src="@drawable/android_map"/>
-
+            tools:src="@drawable/android_map" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
